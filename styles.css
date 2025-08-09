@@ -144,3 +144,36 @@ img{width:100%;border-radius:10px}
     grid-template-columns: 1fr;
   }
 }
+
+:root {
+  --color-primary: #A3C4F3;   /* Pastel Mavi */
+  --color-secondary: #FFC8DD; /* Pastel Pembe */
+  --color-accent: #FFAFCC;    /* Açık Mercan */
+  --color-bg: #FAF9F6;        /* Kırık Beyaz */
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: var(--color-bg);
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: var(--color-primary);
+}
+
+a {
+  color: var(--color-accent);
+}
+
+button {
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--color-accent);
+}
