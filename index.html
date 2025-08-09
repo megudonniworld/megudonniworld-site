@@ -151,17 +151,17 @@
     </div>
   </section>
 
-  <!-- SUBSCRIBE (thanks yok, alert var) -->
+  <!-- SUBSCRIBE (AJAX gönderim + dummy form) -->
   <section id="subscribe" class="section">
     <div class="container">
       <h2>Subscribe</h2>
       <p>Get new art and episode updates in your inbox.</p>
 
+      <!-- Görünür form -->
       <form name="subscribe"
             method="POST"
             data-netlify="true"
-            netlify-honeypot="bot-field"
-            onsubmit="alert('Thanks for subscribing! You’re on the list.'); return true;">
+            netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="subscribe">
         <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
 
@@ -170,6 +170,37 @@
                  style="flex:1; min-width:220px; padding:12px 14px; border-radius:10px; border:1px solid #ddd">
           <button class="btn" type="submit">Subscribe</button>
         </div>
+      </form>
+
+      <!-- AJAX gönderim: 404 yok, Netlify submission oluşur -->
+      <script>
+        (function(){
+          function encode(data){
+            return Object.keys(data).map(k => encodeURIComponent(k)+'='+encodeURIComponent(data[k])).join('&');
+          }
+          const f = document.querySelector('form[name="subscribe"]');
+          if (!f) return;
+          f.addEventListener('submit', async function(e){
+            e.preventDefault(); // yönlenip 404 olmasın
+            const data = { 'form-name': 'subscribe', email: f.email.value };
+            try{
+              await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: encode(data)
+              });
+              alert("Thanks for subscribing! You're on the list.");
+              f.reset();
+            }catch(err){
+              alert('Oops! Please try again in a moment.');
+            }
+          });
+        })();
+      </script>
+
+      <!-- Dummy (gizli) form: Netlify build’de formu algılasın -->
+      <form name="subscribe" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="email" name="email">
       </form>
     </div>
   </section>
@@ -214,9 +245,5 @@
       window.addEventListener("load", () => navigator.serviceWorker.register("/service-worker.js"));
     }
   </script>
-  <form name="subscribe" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="email" name="email">
-</form>
-
 </body>
 </html>
