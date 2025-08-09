@@ -385,3 +385,27 @@ html{scroll-behavior:smooth}
   .nav-links.active{ display:flex; }
   .nav-links li a{ padding:12px 0; }
 }
+
+/* Hızlı Store butonu - varsayılan kapalı */
+.store-quick{
+  display:none;
+}
+
+/* Mobilde Store'u dışarı çıkar, menü içindeki Store'u gizle */
+@media (max-width:768px){
+  .store-quick{
+    display:inline-flex;
+    align-items:center;
+    padding:8px 12px;
+    background:#ff4b4b;
+    color:#fff;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    margin-right:4px; /* ikonlara çok yapışmasın */
+  }
+  .store-quick:hover{ background:#e63c3c; }
+
+  /* Hamburger menü açıkken listede görünen Store öğesini gizle */
+  .nav-links .nav-store{ display:none; }
+}
