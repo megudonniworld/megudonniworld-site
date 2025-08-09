@@ -111,3 +111,11 @@ img{width:100%;border-radius:10px}
     text-align: center;
   }
 }
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
