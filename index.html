@@ -9,29 +9,82 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <header class="header">
     <div class="container wrap">
-      <div class="brand">
-        <img src="images/logo.svg" alt="Megu Donni logo">
-        <strong>Megu Donni World</strong>
-      </div>
+      <div class="brand">Megu Donni World</div>
+      <nav class="nav">
+        <a href="#gallery">Gallery</a>
+        <a href="#episodes">Episodes</a>
+        <a href="#subscribe">Subscribe</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
+
   <main>
-    <section id="gallery" class="section gallery">
+    <!-- HERO -->
+    <section class="container hero">
+      <div>
+        <div class="title">Blue-haired curiosity meets daily adventures.</div>
+        <p>Welcome to the official home of <strong>Megu Donni</strong>—mini stories, artwork, and soon: short animations.</p>
+        <div style="margin-top:12px">
+          <a class="btn primary" href="#gallery">Browse Gallery</a>
+          <a class="btn" style="margin-left:8px" href="#subscribe">Get Updates</a>
+        </div>
+      </div>
+      <div>
+        <!-- İstersen buraya bir hero görseli ekleriz -->
+        <!-- <img src="images/at_binici_small.png" alt="Megu Donni hero"> -->
+      </div>
+    </section>
+
+    <!-- GALLERY (senin mevcut görsellerin) -->
+    <section id="gallery" class="section">
       <div class="container">
         <h2>Gallery</h2>
         <div class="grid-3" style="margin-top:12px">
-  <img src="images/at_binici_small.png" alt="Megu Donni in an equestrian outfit holding a riding helmet">
-<img src="images/gallery_fencing.png" alt="Megu Donni practicing fencing with a foil and mask">
-<img src="images/gallery_archaeologist.png" alt="Megu Donni as an archaeologist restoring a clay pot">
-<img src="images/gallery_firefighter.png" alt="Megu Donni dressed as a firefighter holding a hose">
-<img src="images/gallery_archery.png" alt="Megu Donni aiming a bow and arrow in an action pose">
-<!-- varsa ekle -->
-<img src="images/gallery_ballet.gif" alt="Megu Donni performing a joyful ballet dance in a pink tutu">
-</div>
-     </div>
+          <img src="images/at_binici_small.png" alt="Megu Donni in an equestrian outfit holding a riding helmet">
+          <img src="images/gallery_fencing.png" alt="Megu Donni practicing fencing with a foil and mask">
+          <img src="images/gallery_archaeologist.png" alt="Megu Donni as an archaeologist restoring a clay pot">
+          <img src="images/gallery_firefighter.png" alt="Megu Donni dressed as a firefighter holding a hose">
+          <img src="images/gallery_archery.png" alt="Megu Donni aiming a bow and arrow in an action pose">
+          <!-- varsa ekle -->
+          <!-- <img src="images/gallery_ballet.gif" alt="Megu Donni performing a joyful ballet dance in a pink tutu"> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Placeholder bölümler: sonra dolduracağız -->
+    <section id="episodes" class="section">
+      <div class="container">
+        <h2>Episodes</h2>
+        <p>Coming soon: short animated episodes starring Megu Donni.</p>
+      </div>
+    </section>
+
+    <section id="subscribe" class="section">
+      <div class="container">
+        <h2>Subscribe</h2>
+        <p>Join the mailing list for new art & episode updates. (We’ll paste your Mailchimp/ConvertKit form here.)</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>For collaborations & licensing: <a href="mailto:hello@megudonni.example">hello@megudonni.example</a></p>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Megu Donni</div>
+      <div><a href="#gallery">Gallery</a> · <a href="#episodes">Episodes</a> · <a href="#subscribe">Subscribe</a></div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
