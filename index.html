@@ -50,35 +50,49 @@
 </section>
 
 <!-- SUBSCRIBE (Netlify Forms) -->
+<!-- SUBSCRIBE (REPLACE THIS WHOLE BLOCK) -->
 <section id="subscribe" class="section">
   <div class="container">
     <h2>Subscribe</h2>
     <p>Get new art and episode updates in your inbox.</p>
+
     <form name="subscribe"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      action="/thanks/">
-      onsubmit="setTimeout(()=>{ location.href='/thanks/'; }, 150);">
-  <input type="hidden" name="form-name" value="subscribe">
-  <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/thanks/">
+      <!-- Netlify form tanıma -->
+      <input type="hidden" name="form-name" value="subscribe">
+      <!-- Bot tuzağı -->
+      <p style="display:none">
+        <label>Don’t fill this out: <input name="bot-field"></label>
+      </p>
+
       <div style="display:flex; gap:8px; flex-wrap:wrap">
         <input type="email" name="email" placeholder="you@example.com" required
                style="flex:1; min-width:220px; padding:12px 14px; border-radius:10px; border:1px solid #ddd">
         <button class="btn" type="submit">Subscribe</button>
       </div>
     </form>
+
+    <!-- Yedek yönlendirme: form gönderildikten kısa süre sonra /thanks/ -->
+    <script>
+      (function () {
+        const f = document.querySelector('form[name="subscribe"]');
+        if (!f) return;
+        f.addEventListener('submit', function () {
+          setTimeout(function () {
+            // hâlâ başka sayfaya gitmediyse thanks'e götür
+            if (!/\/thanks\/?$/.test(location.pathname)) {
+              location.href = '/thanks/';
+            }
+          }, 500);
+        });
+      })();
+    </script>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container">
-    <h2>Contact</h2>
-    <p>For collaborations & licensing: <a href="mailto:megudonni@gmail.com">megudonni@gmail.com</a></p>
-    <p><em>Responses within 48 hours.</em></p>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer class="footer">
