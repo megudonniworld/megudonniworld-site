@@ -15,7 +15,7 @@
   <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- PWA + Plausible (varsa kullanıyorsun) -->
+  <!-- PWA + Plausible (varsa) -->
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#111111">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -30,7 +30,9 @@
       display:flex; align-items:center; justify-content:space-between;
       padding:12px 16px;
     }
-    .logo a{ text-decoration:none; font-weight:700; color:#111; }
+    .logo-wrap{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .logo-wrap img{ height:40px; width:auto; display:block; }
+    .logo-wrap span{ font-weight:700; color:#111; }
 
     .nav-right{ display:flex; align-items:center; gap:12px; }
     .nav-links{ list-style:none; margin:0; padding:0; display:flex; gap:16px; }
@@ -45,6 +47,9 @@
     .social-icons a.twitter{ color:#000000; }
     .social-icons a:hover{ transform:scale(1.15); opacity:.85; }
 
+    /* Hızlı Store butonu (mobilde) */
+    .store-quick{ display:none; }
+
     .menu-toggle{ display:none; font-size:26px; cursor:pointer; user-select:none; }
 
     @media (max-width:768px){
@@ -56,6 +61,15 @@
       }
       .nav-links.active{ display:flex; }
       .nav-links li a{ padding:12px 0; }
+
+      /* Mobilde Store'u hamburger dışına çıkar */
+      .store-quick{
+        display:inline-flex; align-items:center;
+        padding:8px 12px; background:#ff4b4b; color:#fff;
+        border-radius:8px; text-decoration:none; font-weight:600; margin-right:4px;
+      }
+      .store-quick:hover{ background:#e63c3c; }
+      .nav-links .nav-store{ display:none; }
     }
 
     /* Bölümler */
@@ -63,7 +77,7 @@
     .section{ padding:40px 0; }
     .container{ max-width:1100px; margin:0 auto; padding:0 16px; }
 
-    /* Gallery küçük düzen: resimler taşmasın */
+    /* Gallery küçük düzen */
     #gallery img{ max-width:100%; height:auto; border-radius:10px; }
 
     /* Subscribe butonu */
@@ -76,7 +90,10 @@
   <!-- HEADER -->
   <header>
     <nav class="navbar">
-      <div class="logo"><a href="/">Megu Donni</a></div>
+      <a href="/" class="logo-wrap">
+        <img src="images/logo.svg" alt="Megu Donni Logo">
+        <span>Megu Donni</span>
+      </a>
 
       <div class="nav-right">
         <ul class="nav-links" id="navLinks">
@@ -88,8 +105,11 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <!-- Sosyal ikonlar (sağ üst) -->
-       <a class="store-quick" href="store.html" aria-label="Store">Store</a> <div class="social-icons">
+        <!-- Mobil için hızlı Store -->
+        <a class="store-quick" href="store.html" aria-label="Store">Store</a>
+
+        <!-- Sosyal ikonlar -->
+        <div class="social-icons">
           <a href="https://www.youtube.com/@MeguDonni" target="_blank" aria-label="YouTube" class="youtube"><i class="fa-brands fa-youtube"></i></a>
           <a href="https://www.tiktok.com/@megudonni" target="_blank" aria-label="TikTok" class="tiktok"><i class="fa-brands fa-tiktok"></i></a>
           <a href="https://www.instagram.com/cutemegalodon/" target="_blank" aria-label="Instagram" class="instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -131,40 +151,26 @@
     </div>
   </section>
 
-  <!-- SUBSCRIBE (Netlify Forms) -->
+  <!-- SUBSCRIBE (thanks yok, alert var) -->
   <section id="subscribe" class="section">
     <div class="container">
       <h2>Subscribe</h2>
       <p>Get new art and episode updates in your inbox.</p>
 
       <form name="subscribe"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      action="/thanks/">
-  <input type="hidden" name="form-name" value="subscribe">
-  <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap">
-    <input type="email" name="email" placeholder="you@example.com" required
-           style="flex:1;min-width:220px;padding:12px 14px;border-radius:10px;border:1px solid #ddd">
-    <button class="btn" type="submit">Subscribe</button>
-  </div>
-</form>
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onsubmit="alert('Thanks for subscribing! You’re on the list.'); return true;">
+        <input type="hidden" name="form-name" value="subscribe">
+        <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
 
-
-
-      <!-- Yedek yönlendirme -->
-      <script>
-        (function () {
-          const f = document.querySelector('form[name="subscribe"]');
-          if (!f) return;
-          f.addEventListener('submit', function () {
-            setTimeout(function () {
-              if (!/\/thanks\/?$/.test(location.pathname)) location.href = '/thanks/';
-            }, 500);
-          });
-        })();
-      </script>
+        <div style="display:flex; gap:8px; flex-wrap:wrap">
+          <input type="email" name="email" placeholder="you@example.com" required
+                 style="flex:1; min-width:220px; padding:12px 14px; border-radius:10px; border:1px solid #ddd">
+          <button class="btn" type="submit">Subscribe</button>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -199,16 +205,14 @@
     const toggle = document.getElementById('menuToggle');
     const links = document.getElementById('navLinks');
     if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('active'));
+
     // Yıl
     document.getElementById('y').textContent = new Date().getFullYear();
+
     // PWA SW (varsa)
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => navigator.serviceWorker.register("/service-worker.js"));
     }
   </script>
-  <form name="subscribe" netlify hidden>
-  <input type="email" name="email">
-</form>
-
 </body>
 </html>
