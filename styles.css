@@ -185,3 +185,65 @@ html{scroll-behavior:smooth}
 @media (max-width:600px){
   .gallery .grid-3{grid-template-columns:1fr}
 }
+
+/* ===== STORE PAGE ===== */
+.collection-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+  padding:20px 0;
+}
+
+.collection-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+  overflow:hidden;
+  transition:transform .18s ease, box-shadow .18s ease;
+  display:flex;
+  flex-direction:column;
+}
+
+.collection-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+/* Görsel oranı sabit (daha düzenli grid) */
+.collection-card img{
+  width:100%;
+  aspect-ratio: 16 / 10;   /* 1200x750 civarı görünüm */
+  object-fit:cover;
+  display:block;
+}
+
+/* Başlık + buton */
+.collection-card h3{
+  font-size:18px;
+  margin:12px 14px 8px;
+}
+
+.view-btn{
+  display:block;
+  margin:0 14px 14px;
+  text-align:center;
+  background:#ff4b4b;
+  color:#fff;
+  padding:10px 12px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+.view-btn:hover{ background:#e63c3c; }
+
+/* Konteyner hizalama (store sayfasında üst boşluk vs.) */
+.store-top{
+  margin:24px 0 6px;
+}
+
+/* Küçük ekran iyileştirmeleri */
+@media (max-width: 420px){
+  .collection-card h3{ font-size:16px; }
+  .view-btn{ padding:9px 10px; }
+}
