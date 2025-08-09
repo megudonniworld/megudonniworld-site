@@ -5,190 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Megu Donni Store</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: system-ui, Arial, sans-serif;
-      margin: 0;
-      background: #fafafa;
-    }
-    header {
-      background: #fff;
-      padding: 15px 30px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-    .collections {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      padding: 30px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      display: flex;
-      flex-direction: column;
-    }
-    .thumb {
-      width: 100%;
-      aspect-ratio: 4/3;
-      overflow: hidden;
-    }
-    .thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .card-content {
-      padding: 15px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .card-content h3 {
-      margin: 0 0 10px;
-      font-size: 1.1rem;
-      color: #333;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 14px;
-      background: #1a73e8;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      text-align: center;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #0c5bd6;
-    }
-  </style>
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
     <h1>Megu Donni Store</h1>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="store.html" class="active">Store</a>
+      <a href="index.html#subscribe">Subscribe</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
-  </header>
+    <!-- Social Icons -->
+    <div style="display:flex;gap:10px;">
+      <a href="https://www.youtube.com/@MeguDonni" target="_blank"><i class="fab fa-youtube" style="font-size:20px;color:#FF0000"></i></a>
+      <a href="https://www.tiktok.com/@megudonni" target="_blank"><i class="fab fa-tiktok" style="font-size:20px;color:#000"></i></a>
+      <a href="https://www.instagram.com/cutemegalodon/" target="_blank"><i class="fab fa-instagram" style="font-size:20px;color:#C13584"></i></a>
+      <a href="https://x.com/MeguDonni" target="_blank"><i class="fab fa-x-twitter" style="font-size:20px;color:#000"></i></a>
+    </div>
+  </div>
+</header>
 
-  <main>
-    <section class="collections">
+<!-- STORE CONTENT -->
+<main class="container" style="margin-top:30px;">
 
-      <div class="card">
-        <div class="thumb">
-          <img src="images/collections/col-1.jpg" alt="Collection 1">
-        </div>
-        <div class="card-content">
-          <h3>Collection 1</h3>
-          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4329022&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
+  <h2 style="text-align:center;margin-bottom:30px;">Collections</h2>
 
-      <div class="card">
-        <div class="thumb">
-          <img src="images/collections/col-2.jpg" alt="Collection 2">
-        </div>
-        <div class="card-content">
-          <h3>Collection 2</h3>
-          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328906&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
+  <div class="grid">
+    <!-- Collection 1 -->
+    <div class="card">
+      <div class="thumb"><img src="images/collections/col-1.jpg" alt="Collection 1"></div>
+      <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4329022&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View</a>
+    </div>
+    <!-- Collection 2 -->
+    <div class="card">
+      <div class="thumb"><img src="images/collections/col-2.jpg" alt="Collection 2"></div>
+      <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328906&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View</a>
+    </div>
+    <!-- Collection 3 -->
+    <div class="card">
+      <div class="thumb"><img src="images/collections/col-3.jpg" alt="Collection 3"></div>
+      <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328909&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View</a>
+    </div>
+    <!-- Collection 4 -->
+    <div class="card">
+      <div class="thumb"><img src="images/collections/col-4.jpg" alt="Collection 4"></div>
+      <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328911&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View</a>
+    </div>
+    <!-- Collection 5 -->
+    <div class="card">
+      <div class="thumb"><img src="images/collections/col-5.jpg" alt="Collection 5"></div>
+      <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328912&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View</a>
+    </div>
+    <!-- Collection 6 -->
+    <div class="card">
+      <div class="thumb"><img src="images/collections/col-6.jpg" alt="Collection 6"></div>
+      <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328945&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View</a>
+    </div>
+    <!-- Collection 7 -->
+    <div class="card">
+      <div class="thumb"><img src="images/collections/col-7.jpg" alt="Collection 7"></div>
+      <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328996&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View</a>
+    </div>
+    <!-- Collection 8 -->
+    <div class="card">
+      <div class="thumb"><img src="images/collections/col-8.jpg" alt="Collection 8"></div>
+      <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4329022&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View</a>
+    </div>
+    <!-- Collection 9 -->
+    <div class="card">
+      <div class="thumb"><img src="images/collections/col-9.jpg" alt="Collection 9"></div>
+      <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4331871&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View</a>
+    </div>
+    <!-- Collection 10 -->
+    <div class="card">
+      <div class="thumb"><img src="images/collections/col-10.jpg" alt="Collection 10"></div>
+      <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4332076&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View</a>
+    </div>
+  </div>
+</main>
 
-      <div class="card">
-        <div class="thumb">
-          <img src="images/collections/col-3.jpg" alt="Collection 3">
-        </div>
-        <div class="card-content">
-          <h3>Collection 3</h3>
-          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328909&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
+<!-- FOOTER -->
+<footer class="footer" style="margin-top:40px;">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <div>© <span id="y"></span> Megu Donni</div>
+    <div>
+      <a href="index.html#hero">Home</a> ·
+      <a href="index.html#about">About</a> ·
+      <a href="index.html#gallery">Gallery</a> ·
+      <a href="store.html">Store</a> ·
+      <a href="index.html#subscribe">Subscribe</a> ·
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</footer>
 
-      <div class="card">
-        <div class="thumb">
-          <img src="images/collections/col-4.jpg" alt="Collection 4">
-        </div>
-        <div class="card-content">
-          <h3>Collection 4</h3>
-          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328911&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 
-      <div class="card">
-        <div class="thumb">
-          <img src="images/collections/col-5.jpg" alt="Collection 5">
-        </div>
-        <div class="card-content">
-          <h3>Collection 5</h3>
-          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328912&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="thumb">
-          <img src="images/collections/col-6.jpg" alt="Collection 6">
-        </div>
-        <div class="card-content">
-          <h3>Collection 6</h3>
-          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328945&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="thumb">
-          <img src="images/collections/col-7.jpg" alt="Collection 7">
-        </div>
-        <div class="card-content">
-          <h3>Collection 7</h3>
-          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328996&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="thumb">
-          <img src="images/collections/col-8.jpg" alt="Collection 8">
-        </div>
-        <div class="card-content">
-          <h3>Collection 8</h3>
-          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4329022&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="thumb">
-          <img src="images/collections/col-9.jpg" alt="Collection 9">
-        </div>
-        <div class="card-content">
-          <h3>Collection 9</h3>
-          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4331871&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="thumb">
-          <img src="images/collections/col-10.jpg" alt="Collection 10">
-        </div>
-        <div class="card-content">
-          <h3>Collection 10</h3>
-          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4332076&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
-
-    </section>
-  </main>
 </body>
 </html>
