@@ -153,6 +153,13 @@
   <a href="/privacy.html">Privacy Policy</a> |
   <a href="/terms.html">Terms & Conditions</a>
 </footer>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/service-worker.js");
+    });
+  }
+</script>
 
 </body>
 </html>
