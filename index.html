@@ -1,154 +1,210 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Megu Donni World</title>
-  <link rel="stylesheet" href="styles.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <title>Megu Donni World | Fun Art, Stories, and Creative Adventures</title>
+  <meta name="description" content="Discover Megu Donni World, a colorful space filled with fun art, creative stories, and inspiring adventures for all ages.">
+  <meta name="keywords" content="Megu Donni, art, animation, sports, adventures, blue hair character">
+  <meta name="author" content="Megu Donni World">
 
+  <link rel="icon" href="images/logo.svg?v=2">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- PWA + Plausible (varsa kullanıyorsun) -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#111111">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <script defer data-domain="megudonniworld.netlify.app" src="https://plausible.io/js/script.js"></script>
+
+  <style>
+    /* NAVBAR (masaüstü + mobil) */
+    .navbar{
+      position:sticky; top:0; z-index:1000;
+      background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.06);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 16px;
+    }
+    .logo a{ text-decoration:none; font-weight:700; color:#111; }
+
+    .nav-right{ display:flex; align-items:center; gap:12px; }
+    .nav-links{ list-style:none; margin:0; padding:0; display:flex; gap:16px; }
+    .nav-links a{ text-decoration:none; color:#333; padding:6px 8px; border-radius:8px; }
+    .nav-links a:hover{ background:#f2f2f2; }
+
+    .social-icons{ display:flex; align-items:center; gap:12px; margin-left:8px; }
+    .social-icons a{ font-size:20px; line-height:1; transition:transform .2s ease, opacity .2s ease, color .2s ease; }
+    .social-icons a.youtube{ color:#FF0000; }
+    .social-icons a.tiktok{ color:#000000; }
+    .social-icons a.instagram{ color:#E4405F; }
+    .social-icons a.twitter{ color:#000000; }
+    .social-icons a:hover{ transform:scale(1.15); opacity:.85; }
+
+    .menu-toggle{ display:none; font-size:26px; cursor:pointer; user-select:none; }
+
+    @media (max-width:768px){
+      .menu-toggle{ display:block; }
+      .nav-links{
+        position:absolute; left:0; right:0; top:56px;
+        background:#fff; border-top:1px solid #eee;
+        display:none; flex-direction:column; gap:0; padding:8px 16px;
+      }
+      .nav-links.active{ display:flex; }
+      .nav-links li a{ padding:12px 0; }
+    }
+
+    /* Bölümler */
+    .hero{ padding:48px 16px; text-align:center; background:linear-gradient(#eef8ff,#fff); }
+    .section{ padding:40px 0; }
+    .container{ max-width:1100px; margin:0 auto; padding:0 16px; }
+
+    /* Gallery küçük düzen: resimler taşmasın */
+    #gallery img{ max-width:100%; height:auto; border-radius:10px; }
+
+    /* Subscribe butonu */
+    .btn{ background:#ff4b4b; color:#fff; border:none; border-radius:10px; padding:12px 16px; cursor:pointer; }
+    .btn:hover{ background:#e63c3c; }
+  </style>
 </head>
 <body>
 
-<header>
-  <!-- Sosyal Medya İkonları -->
-<div style="position: absolute; top: 10px; right: 20px; display: flex; gap: 10px;">
-  <a href="https://www.youtube.com/@MeguDonni" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" alt="YouTube" style="height:24px;">
-  </a>
-  <a href="https://www.tiktok.com/@megudonni" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" alt="TikTok" style="height:24px;">
-  </a>
-  <a href="https://www.instagram.com/cutemegalodon/" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="height:24px;">
-  </a>
-  <a href="https://x.com/MeguDonni" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" alt="X (Twitter)" style="height:24px;">
-  </a>
-</div>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><a href="/">Megu Donni</a></div>
 
-  <nav class="navbar">
-    <div class="logo"><a href="/">Megu Donni</a></div>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="store.html">Store</a></li>
-    </ul> <div class="social-icons">
-  <a href="https://www.youtube.com/@MeguDonni" target="_blank" aria-label="YouTube" class="youtube"><i class="fa-brands fa-youtube"></i></a>
-  <a href="https://www.tiktok.com/@megudonni" target="_blank" aria-label="TikTok" class="tiktok"><i class="fa-brands fa-tiktok"></i></a>
-  <a href="https://www.instagram.com/cutemegalodon/" target="_blank" aria-label="Instagram" class="instagram"><i class="fa-brands fa-instagram"></i></a>
-  <a href="https://x.com/MeguDonni" target="_blank" aria-label="X" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
-</div>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="store.html">Store</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
 
-    <div class="menu-toggle">&#9776;</div>
-  </nav>
-</header>
+        <!-- Sosyal ikonlar (sağ üst) -->
+        <div class="social-icons">
+          <a href="https://www.youtube.com/@MeguDonni" target="_blank" aria-label="YouTube" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@megudonni" target="_blank" aria-label="TikTok" class="tiktok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/cutemegalodon/" target="_blank" aria-label="Instagram" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/MeguDonni" target="_blank" aria-label="X" class="twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
 
-<section id="hero" class="hero">
-  <h1>Welcome to Megu Donni World</h1>
-  <p>Discover the adventures, art, and stories of Megu Donni.</p>
-</section>
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <h2>About</h2>
-    <p>Megu Donni is a blue-haired dreamer turning everyday moments into playful art and stories.</p>
-  </div>
-</section>
+        <div class="menu-toggle" id="menuToggle">&#9776;</div>
+      </div>
+    </nav>
+  </header>
 
-<!-- GALLERY -->
-<section id="gallery" class="section">
-  <div class="container">
-    <h2>Gallery</h2>
-    <div class="grid-3" style="margin-top:12px">
-      <img src="images/at_binici_small.png" alt="Megu Donni equestrian">
-      <img src="images/gallery_fencing.png" alt="Megu Donni fencing">
-      <img src="images/gallery_archaeologist.png" alt="Megu Donni archaeologist">
-      <img src="images/gallery_firefighter.png" alt="Megu Donni firefighter">
-      <img src="images/gallery_archery.png" alt="Megu Donni archery">
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <h1>Welcome to Megu Donni World</h1>
+      <p>Step into the colorful world of Megu Donni, where imagination meets adventure.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SUBSCRIBE (Netlify Forms) -->
-<!-- SUBSCRIBE (REPLACE THIS WHOLE BLOCK) -->
-<section id="subscribe" class="section">
-  <div class="container">
-    <h2>Subscribe</h2>
-    <p>Get new art and episode updates in your inbox.</p>
-
-    <form name="subscribe"
-      method="POST"
-      netlify                <!-- ekstra: data- yerine doğrudan netlify -->
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      action="/thanks/">
-  <input type="hidden" name="form-name" value="subscribe">
-  <p style="display:none">
-    <label>Don’t fill this out: <input name="bot-field"></label>
-  </p>
-
-  <div style="display:flex; gap:8px; flex-wrap:wrap">
-    <input type="email" name="email" placeholder="you@example.com" required
-           style="flex:1; min-width:220px; padding:12px 14px; border-radius:10px; border:1px solid #ddd">
-    <button class="btn" type="submit">Subscribe</button>
-  </div>
-</form>
-
-
-    <!-- Yedek yönlendirme: form gönderildikten kısa süre sonra /thanks/ -->
-    <script>
-      (function () {
-        const f = document.querySelector('form[name="subscribe"]');
-        if (!f) return;
-        f.addEventListener('submit', function () {
-          setTimeout(function () {
-            // hâlâ başka sayfaya gitmediyse thanks'e götür
-            if (!/\/thanks\/?$/.test(location.pathname)) {
-              location.href = '/thanks/';
-            }
-          }, 500);
-        });
-      })();
-    </script>
-  </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-    <div>© <span id="y"></span> Megu Donni</div>
-    <div>
-      <a href="#hero">Home</a> ·
-      <a href="#about">About</a> ·
-      <a href="#gallery">Gallery</a> ·
-      <a href="store.html">Store</a> ·
-      <a href="#subscribe">Subscribe</a> ·
-      <a href="#contact">Contact</a> ·
-      <!-- 👇 geri ekledik -->
-      <a href="/privacy.html">Privacy Policy</a> ·
-      <a href="/terms.html">Terms &amp; Conditions</a>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About</h2>
+      <p>Megu Donni is a blue-haired dreamer who transforms everyday moments into extraordinary adventures. Whether she’s exploring ancient ruins, mastering new sports, or creating art, Megu brings a sense of wonder and creativity to everything she does.</p>
     </div>
-  </div>
-</footer>
+  </section>
 
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2>Gallery</h2>
+      <div class="grid-3" style="margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px;">
+        <img src="images/at_binici_small.png" alt="Megu Donni equestrian">
+        <img src="images/gallery_fencing.png" alt="Megu Donni fencing">
+        <img src="images/gallery_archaeologist.png" alt="Megu Donni archaeologist">
+        <img src="images/gallery_firefighter.png" alt="Megu Donni firefighter">
+        <img src="images/gallery_archery.png" alt="Megu Donni archery">
+      </div>
+    </div>
+  </section>
 
-<!-- MOBILE MENU JS (hamburger) -->
-<script>
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav-links');
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => nav.classList.toggle('active'));
-  }
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+  <!-- SUBSCRIBE (Netlify Forms) -->
+  <section id="subscribe" class="section">
+    <div class="container">
+      <h2>Subscribe</h2>
+      <p>Get new art and episode updates in your inbox.</p>
 
-  <form name="subscribe" netlify netlify-honeypot="bot-field" hidden>
-  <input type="email" name="email">
-</form>
+      <form name="subscribe"
+            method="POST"
+            netlify
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thanks/">
+        <input type="hidden" name="form-name" value="subscribe">
+        <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
 
+        <div style="display:flex; gap:8px; flex-wrap:wrap">
+          <input type="email" name="email" placeholder="you@example.com" required
+                 style="flex:1; min-width:220px; padding:12px 14px; border-radius:10px; border:1px solid #ddd">
+          <button class="btn" type="submit">Subscribe</button>
+        </div>
+      </form>
+
+      <!-- Yedek yönlendirme -->
+      <script>
+        (function () {
+          const f = document.querySelector('form[name="subscribe"]');
+          if (!f) return;
+          f.addEventListener('submit', function () {
+            setTimeout(function () {
+              if (!/\/thanks\/?$/.test(location.pathname)) location.href = '/thanks/';
+            }, 500);
+          });
+        })();
+      </script>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>For collaborations & licensing: <a href="mailto:megudonni@gmail.com">megudonni@gmail.com</a></p>
+      <p><em>Responses within 48 hours.</em></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>© <span id="y"></span> Megu Donni</div>
+      <div>
+        <a href="#hero">Home</a> ·
+        <a href="#about">About</a> ·
+        <a href="#gallery">Gallery</a> ·
+        <a href="store.html">Store</a> ·
+        <a href="#subscribe">Subscribe</a> ·
+        <a href="#contact">Contact</a> ·
+        <a href="/privacy.html">Privacy Policy</a> ·
+        <a href="/terms.html">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobil menü
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('active'));
+    // Yıl
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // PWA SW (varsa)
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("/service-worker.js"));
+    }
+  </script>
 </body>
 </html>
