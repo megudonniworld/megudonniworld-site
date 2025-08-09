@@ -113,24 +113,26 @@
     <p>Get new art and episode updates in your inbox.</p>
 
     <!-- Netlify Forms -->
-    <form name="subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" style="max-width:520px">
-      <!-- Netlify'nin formu algılaması için gerekli -->
-      <input type="hidden" name="form-name" value="subscribe" />
-      <!-- Bot tuzağı (kullanıcı görmez) -->
-      <p style="display:none">
-        <label>Don’t fill this out: <input name="bot-field" /></label>
-      </p>
+    <form name="subscribe"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/thank-you.html"
+      style="max-width:520px">
+  <!-- Netlify'nin formu algılaması için gerekli -->
+  <input type="hidden" name="form-name" value="subscribe" />
+  <!-- Bot tuzağı -->
+  <p style="display:none">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
 
-      <div style="display:flex; gap:8px; flex-wrap:wrap">
-        <input type="email" name="email" placeholder="you@example.com" required
-               style="flex:1; min-width:220px; padding:12px 14px; border-radius:10px; border:1px solid #ddd">
-        <button class="btn" type="submit">Subscribe</button>
-      </div>
+  <div style="display:flex; gap:8px; flex-wrap:wrap">
+    <input type="email" name="email" placeholder="you@example.com" required
+           style="flex:1; min-width:220px; padding:12px 14px; border-radius:10px; border:1px solid #ddd">
+    <button class="btn" type="submit">Subscribe</button>
+  </div>
+</form>
 
-      <p style="font-size:12px; color:#666; margin-top:8px">
-        We respect your privacy. Unsubscribe anytime.
-      </p>
-    </form>
   </div>
 </section>
 
