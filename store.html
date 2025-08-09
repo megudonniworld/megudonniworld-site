@@ -6,109 +6,189 @@
   <title>Megu Donni Store</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    .thumb {
-      aspect-ratio: 16 / 10;
-      background: #f3f3f3;
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      margin: 0;
+      background: #fafafa;
+    }
+    header {
+      background: #fff;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .collections {
       display: grid;
-      place-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+    }
+    .thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
     }
     .thumb img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content {
+      padding: 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      background: #1a73e8;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0c5bd6;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Megu Donni Store</h1>
-    <p>Explore our Redbubble collections — each is filled with unique Megu Donni designs.</p>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
   </header>
 
-  <main class="collections-grid">
+  <main>
+    <section class="collections">
 
-    <div class="collection-card">
-      <div class="thumb">
-        <img src="images/collections/col-1.jpg" alt="Underwater Yoga">
+      <div class="card">
+        <div class="thumb">
+          <img src="images/collections/col-1.jpg" alt="Collection 1">
+        </div>
+        <div class="card-content">
+          <h3>Collection 1</h3>
+          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4329022&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+        </div>
       </div>
-      <h3>Underwater Yoga</h3>
-      <a class="view-btn" href="#">View Collection</a>
-    </div>
 
-    <div class="collection-card">
-      <div class="thumb">
-        <img src="images/collections/col-2.jpg" alt="Follow Your Dreams">
+      <div class="card">
+        <div class="thumb">
+          <img src="images/collections/col-2.jpg" alt="Collection 2">
+        </div>
+        <div class="card-content">
+          <h3>Collection 2</h3>
+          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328906&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+        </div>
       </div>
-      <h3>Follow Your Dreams</h3>
-      <a class="view-btn" href="#">View Collection</a>
-    </div>
 
-    <div class="collection-card">
-      <div class="thumb">
-        <img src="images/collections/col-3.jpg" alt="Eat Cake Like a Shark">
+      <div class="card">
+        <div class="thumb">
+          <img src="images/collections/col-3.jpg" alt="Collection 3">
+        </div>
+        <div class="card-content">
+          <h3>Collection 3</h3>
+          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328909&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+        </div>
       </div>
-      <h3>Eat Cake Like a Shark</h3>
-      <a class="view-btn" href="#">View Collection</a>
-    </div>
 
-    <div class="collection-card">
-      <div class="thumb">
-        <img src="images/collections/col-4.jpg" alt="Surprised Shark">
+      <div class="card">
+        <div class="thumb">
+          <img src="images/collections/col-4.jpg" alt="Collection 4">
+        </div>
+        <div class="card-content">
+          <h3>Collection 4</h3>
+          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328911&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+        </div>
       </div>
-      <h3>Surprised Shark</h3>
-      <a class="view-btn" href="#">View Collection</a>
-    </div>
 
-    <div class="collection-card">
-      <div class="thumb">
-        <img src="images/collections/col-5.jpg" alt="Breathe Motivation">
+      <div class="card">
+        <div class="thumb">
+          <img src="images/collections/col-5.jpg" alt="Collection 5">
+        </div>
+        <div class="card-content">
+          <h3>Collection 5</h3>
+          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328912&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+        </div>
       </div>
-      <h3>Breathe Motivation</h3>
-      <a class="view-btn" href="#">View Collection</a>
-    </div>
 
-    <div class="collection-card">
-      <div class="thumb">
-        <img src="images/collections/col-6.jpg" alt="Stand Out Shark">
+      <div class="card">
+        <div class="thumb">
+          <img src="images/collections/col-6.jpg" alt="Collection 6">
+        </div>
+        <div class="card-content">
+          <h3>Collection 6</h3>
+          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328945&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+        </div>
       </div>
-      <h3>Stand Out Shark</h3>
-      <a class="view-btn" href="#">View Collection</a>
-    </div>
 
-    <div class="collection-card">
-      <div class="thumb">
-        <img src="images/collections/col-7.jpg" alt="Birthday Shark">
+      <div class="card">
+        <div class="thumb">
+          <img src="images/collections/col-7.jpg" alt="Collection 7">
+        </div>
+        <div class="card-content">
+          <h3>Collection 7</h3>
+          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328996&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+        </div>
       </div>
-      <h3>Birthday Shark</h3>
-      <a class="view-btn" href="#">View Collection</a>
-    </div>
 
-    <div class="collection-card">
-      <div class="thumb">
-        <img src="images/collections/col-8.jpg" alt="Resetting My Life">
+      <div class="card">
+        <div class="thumb">
+          <img src="images/collections/col-8.jpg" alt="Collection 8">
+        </div>
+        <div class="card-content">
+          <h3>Collection 8</h3>
+          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4329022&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+        </div>
       </div>
-      <h3>Resetting My Life</h3>
-      <a class="view-btn" href="#">View Collection</a>
-    </div>
 
-    <div class="collection-card">
-      <div class="thumb">
-        <img src="images/collections/col-9.jpg" alt="Swim Deeper, Scream Louder">
+      <div class="card">
+        <div class="thumb">
+          <img src="images/collections/col-9.jpg" alt="Collection 9">
+        </div>
+        <div class="card-content">
+          <h3>Collection 9</h3>
+          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4331871&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+        </div>
       </div>
-      <h3>Swim Deeper, Scream Louder</h3>
-      <a class="view-btn" href="#">View Collection</a>
-    </div>
 
-    <div class="collection-card">
-      <div class="thumb">
-        <img src="images/collections/col-10.jpg" alt="Earth Has No Barcode">
+      <div class="card">
+        <div class="thumb">
+          <img src="images/collections/col-10.jpg" alt="Collection 10">
+        </div>
+        <div class="card-content">
+          <h3>Collection 10</h3>
+          <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4332076&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+        </div>
       </div>
-      <h3>Earth Has No Barcode</h3>
-      <a class="view-btn" href="#">View Collection</a>
-    </div>
 
+    </section>
   </main>
-
 </body>
 </html>
