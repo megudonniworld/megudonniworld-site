@@ -8,69 +8,49 @@
   <style>
     body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#fafafa}
     h1{text-align:center;margin:24px 0}
-    .store-container{display:flex;flex-wrap:wrap;justify-content:center}
-    .product-card{border:1px solid #eee;border-radius:12px;padding:16px;text-align:center;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.05);max-width:240px;margin:10px}
-    .product-card img{max-width:100%;border-radius:8px}
-    .product-card h3{font-size:16px;margin:10px 0 5px}
-    .product-card p{font-size:14px;color:#666}
-    .buy-btn{display:inline-block;margin-top:8px;padding:8px 12px;background:#ff4b4b;color:#fff;border-radius:6px;text-decoration:none;font-size:14px}
-    .buy-btn:hover{background:#e63c3c}
+    .collections{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;max-width:1100px;margin:0 auto 40px;padding:0 16px}
+    .card{background:#fff;border:1px solid #eee;border-radius:14px;box-shadow:0 2px 6px rgba(0,0,0,.05);overflow:hidden;display:flex;flex-direction:column}
+    .card img{width:100%;height:180px;object-fit:cover}
+    .card .content{padding:14px}
+    .card h3{font-size:18px;margin:6px 0 8px}
+    .card p{font-size:14px;color:#666;margin:0 0 12px}
+    .btn{display:inline-block;padding:8px 12px;background:#ff4b4b;color:#fff;border-radius:8px;text-decoration:none;font-size:14px}
+    .btn:hover{background:#e63c3c}
   </style>
 </head>
 <body>
   <h1>Megu Donni Official Store</h1>
 
-  <div class="store-container">
-    <!-- 1 -->
-    <div class="product-card">
-      <a href="https://www.redbubble.com/i/mug/Follow-Your-Dreams-Megalodon-Style-by-Aydemir71/172638367.W3OIY" target="_blank" rel="noopener">
-        <img src="/images/products/follow-your-dreams-mug.jpg" alt="Follow Your Dreams. Megalodon Style (Mug)">
-      </a>
-      <h3>Follow Your Dreams. Megalodon Style (Mug)</h3>
-      <p>Dishwasher & microwave-safe ceramic mug.</p>
-      <a class="buy-btn" href="https://www.redbubble.com/i/mug/Follow-Your-Dreams-Megalodon-Style-by-Aydemir71/172638367.W3OIY" target="_blank" rel="noopener">Buy Now</a>
+  <div class="collections">
+    <!-- Koleksiyon #1 – (senin verdiğin link) -->
+    <div class="card">
+      <img src="/images/collections/underwater-yoga-collection.jpg" alt="Underwater Yoga Collection">
+      <div class="content">
+        <h3>Underwater Yoga Collection</h3>
+        <p>Megu Donni’s underwater yoga vibes—mugs, tees and more.</p>
+        <a class="btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328903&iaCode=all-departments&sortOrder=top%20selling" target="_blank" rel="noopener">View Collection</a>
+      </div>
     </div>
 
-    <!-- 2 -->
-    <div class="product-card">
-      <a href="https://www.redbubble.com/i/mug/Eat-Cake-Like-a-Shark-by-Aydemir71/172617200.9Q0AD" target="_blank" rel="noopener">
-        <img src="/images/products/eat-cake-like-a-shark-mug.jpg" alt="Eat Cake Like a Shark (Mug)">
-      </a>
-      <h3>Eat Cake Like a Shark (Mug)</h3>
-      <p>Dishwasher & microwave-safe ceramic mug.</p>
-      <a class="buy-btn" href="https://www.redbubble.com/i/mug/Eat-Cake-Like-a-Shark-by-Aydemir71/172617200.9Q0AD" target="_blank" rel="noopener">Buy Now</a>
+    <!-- Koleksiyon #2 – Örnek (linki sen eklersin) -->
+    <div class="card">
+      <img src="/images/collections/comic-series-collection.jpg" alt="Megu Donni Comic Series">
+      <div class="content">
+        <h3>Megu Donni Comic Series</h3>
+        <p>Quirky one-liners & slice-of-life shark humor.</p>
+        <a class="btn" href="RED BUBBLE KOLEKSIYON LINKI" target="_blank" rel="noopener">View Collection</a>
+      </div>
     </div>
 
-    <!-- 3 -->
-    <div class="product-card">
-      <a href="https://www.redbubble.com/i/mug/Megu-Donni-Awkward-Entrance-Comic-by-Aydemir71/172610725.9Q0AD" target="_blank" rel="noopener">
-        <img src="/images/products/awkward-entrance-mug.jpg" alt="Megu Donni Awkward Entrance Comic (Mug)">
-      </a>
-      <h3>Megu Donni Awkward Entrance Comic (Mug)</h3>
-      <p>Dishwasher & microwave-safe ceramic mug.</p>
-      <a class="buy-btn" href="https://www.redbubble.com/i/mug/Megu-Donni-Awkward-Entrance-Comic-by-Aydemir71/172610725.9Q0AD" target="_blank" rel="noopener">Buy Now</a>
-    </div>
-
-    <!-- 4 -->
-    <div class="product-card">
-      <a href="https://www.redbubble.com/i/mug/Megu-Donni-Mom-App-Not-Found-Comic-by-Aydemir71/172610590.9Q0AD" target="_blank" rel="noopener">
-        <img src="/images/products/mom-app-not-found-mug.jpg" alt="Megu Donni Mom App Not Found Comic (Mug)">
-      </a>
-      <h3>Mom App Not Found (Mug)</h3>
-      <p>Dishwasher & microwave-safe ceramic mug.</p>
-      <a class="buy-btn" href="https://www.redbubble.com/i/mug/Megu-Donni-Mom-App-Not-Found-Comic-by-Aydemir71/172610590.9Q0AD" target="_blank" rel="noopener">Buy Now</a>
-    </div>
-
-    <!-- 5 -->
-    <div class="product-card">
-      <a href="https://www.redbubble.com/i/mug/Megu-Donni-Stand-Out-Shark-Comic-by-Aydemir71/172610515.9Q0AD" target="_blank" rel="noopener">
-        <img src="/images/products/stand-out-shark-mug.jpg" alt="Megu Donni Stand Out Shark Comic (Mug)">
-      </a>
-      <h3>Stand Out Shark (Mug)</h3>
-      <p>Dishwasher & microwave-safe ceramic mug.</p>
-      <a class="buy-btn" href="https://www.redbubble.com/i/mug/Megu-Donni-Stand-Out-Shark-Comic-by-Aydemir71/172610515.9Q0AD" target="_blank" rel="noopener">Buy Now</a>
+    <!-- Koleksiyon #3 – Örnek -->
+    <div class="card">
+      <img src="/images/collections/motivational-sharks-collection.jpg" alt="Motivational Sharks">
+      <div class="content">
+        <h3>Motivational Sharks</h3>
+        <p>Bold quotes with cheerful shark energy.</p>
+        <a class="btn" href="RED BUBBLE KOLEKSIYON LINKI" target="_blank" rel="noopener">View Collection</a>
+      </div>
     </div>
   </div>
 </body>
 </html>
-
