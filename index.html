@@ -57,23 +57,23 @@
     <p>Get new art and episode updates in your inbox.</p>
 
     <form name="subscribe"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          action="/thanks/">
-      <!-- Netlify form tanıma -->
-      <input type="hidden" name="form-name" value="subscribe">
-      <!-- Bot tuzağı -->
-      <p style="display:none">
-        <label>Don’t fill this out: <input name="bot-field"></label>
-      </p>
+      method="POST"
+      netlify                <!-- ekstra: data- yerine doğrudan netlify -->
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/thanks/">
+  <input type="hidden" name="form-name" value="subscribe">
+  <p style="display:none">
+    <label>Don’t fill this out: <input name="bot-field"></label>
+  </p>
 
-      <div style="display:flex; gap:8px; flex-wrap:wrap">
-        <input type="email" name="email" placeholder="you@example.com" required
-               style="flex:1; min-width:220px; padding:12px 14px; border-radius:10px; border:1px solid #ddd">
-        <button class="btn" type="submit">Subscribe</button>
-      </div>
-    </form>
+  <div style="display:flex; gap:8px; flex-wrap:wrap">
+    <input type="email" name="email" placeholder="you@example.com" required
+           style="flex:1; min-width:220px; padding:12px 14px; border-radius:10px; border:1px solid #ddd">
+    <button class="btn" type="submit">Subscribe</button>
+  </div>
+</form>
+
 
     <!-- Yedek yönlendirme: form gönderildikten kısa süre sonra /thanks/ -->
     <script>
