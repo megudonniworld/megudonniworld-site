@@ -344,3 +344,44 @@ html{scroll-behavior:smooth}
 .hero{ padding:48px 16px; text-align:center;
   background: linear-gradient(#eef8ff, #fff); }
 .container{ max-width:1100px; margin:0 auto; padding:0 16px; }
+
+/* ==== Sosyal ikonlar (sağ üst) ==== */
+.social-icons{
+  display:flex; align-items:center; gap:12px;
+  margin-left:12px;
+}
+.social-icons a{
+  font-size:20px; line-height:1;
+  transition:transform .2s ease, opacity .2s ease, color .2s ease;
+}
+.social-icons a.youtube{ color:#FF0000; }     /* kırmızı */
+.social-icons a.tiktok{ color:#000000; }      /* siyah (TikTok çok renkli ikon FA içinde yok, siyah tercih) */
+.social-icons a.instagram{ color:#E4405F; }   /* pembe/kırmızı */
+.social-icons a.twitter{ color:#000000; }     /* X siyah */
+.social-icons a:hover{ transform:scale(1.15); opacity:.85; }
+
+/* Mobilde menü daralınca ikonları küçült */
+@media (max-width:768px){
+  .social-icons{ gap:10px; }
+  .social-icons a{ font-size:18px; }
+}
+
+/* ---- Navbar örnek uyum (gerekirse) ---- */
+.navbar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 16px; background:#fff; box-shadow:0 1px 6px rgba(0,0,0,.06);
+}
+.nav-links{ list-style:none; display:flex; gap:16px; margin:0; padding:0; }
+.nav-links a{ text-decoration:none; color:#333; padding:6px 8px; border-radius:8px; }
+.nav-links a:hover{ background:#f2f2f2; }
+.menu-toggle{ display:none; font-size:26px; cursor:pointer; user-select:none; }
+
+@media (max-width:768px){
+  .menu-toggle{ display:block; }
+  .nav-links{
+    position:absolute; left:0; right:0; top:56px; background:#fff; border-top:1px solid #eee;
+    display:none; flex-direction:column; gap:0; padding:8px 16px;
+  }
+  .nav-links.active{ display:flex; }
+  .nav-links li a{ padding:12px 0; }
+}
