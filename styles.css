@@ -213,9 +213,9 @@ html{scroll-behavior:smooth}
 /* Görsel oranı sabit (daha düzenli grid) */
 .collection-card img{
   width:100%;
-  aspect-ratio: 16 / 10;   /* 1200x750 civarı görünüm */
-  object-fit:cover;
-  display:block;
+  aspect-ratio: 3 / 2;     /* daha yüksek oran = daha az kesme */
+  object-fit: cover;
+  object-position: top;     /* üstü kesme, kadrajı yukarı al */
 }
 
 /* Başlık + buton */
