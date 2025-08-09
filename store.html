@@ -3,10 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Megu Donni Store</title>
   <link rel="stylesheet" href="styles.css">
-
   <style>
     .collection-grid {
       display: grid;
@@ -17,124 +15,117 @@
     .collection-card {
       background: #fff;
       border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .collection-card:hover {
+      transform: translateY(-4px);
     }
     .collection-card img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      height: auto;
+      display: block;
     }
     .collection-card h3 {
       font-size: 18px;
-      margin: 12px;
-      flex: 1;
+      margin: 12px 0 8px;
     }
-    .view-btn {
-      display: block;
+    .collection-card a {
+      display: inline-block;
+      padding: 8px 14px;
       background: #ff4b4b;
       color: #fff;
-      text-align: center;
-      padding: 10px;
       text-decoration: none;
-      font-weight: bold;
-      border-top: 1px solid #eee;
+      border-radius: 6px;
+      margin-bottom: 14px;
     }
-    .view-btn:hover {
+    .collection-card a:hover {
       background: #e63c3c;
     }
   </style>
 </head>
 <body>
 
-  <h1 class="store-top">Store Collections</h1>
-
-
 <header class="header">
   <div class="container wrap">
     <div class="brand">
-      <img src="images/logo.svg" alt="Megu Donni logo">
+      <a href="/"><img src="images/logo.svg" alt="Megu Donni logo"></a>
       <strong>Megu Donni World</strong>
     </div>
     <nav class="nav">
-      <a href="index.html#gallery">Gallery</a>
-      <a href="index.html#episodes">Episodes</a>
-      <a href="store.html" class="active">Store</a>
-      <a href="index.html#subscribe">Subscribe</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="/">Home</a>
+      <a href="/store.html" class="active">Store</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <section class="section">
-    <div class="container">
-      <h1>Store Collections</h1>
-      <div class="collection-grid">
-        <div class="collection-card">
-          <img src="images/collections/col-1.jpg" alt="Collection 1">
-          <h3>Underwater Yoga Collection</h3>
-          <a class="view-btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328903&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-        <div class="collection-card">
-          <img src="images/collections/col-2.jpg" alt="Collection 2">
-          <h3>Dreams Megalodon Style</h3>
-          <a class="view-btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328906&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-        <div class="collection-card">
-          <img src="images/collections/col-3.jpg" alt="Collection 3">
-          <h3>Eat Cake Like a Shark</h3>
-          <a class="view-btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328909&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-        <div class="collection-card">
-          <img src="images/collections/col-4.jpg" alt="Collection 4">
-          <h3>Awkward Entrance Comic</h3>
-          <a class="view-btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328911&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-        <div class="collection-card">
-          <img src="images/collections/col-5.jpg" alt="Collection 5">
-          <h3>Mom App Not Found Comic</h3>
-          <a class="view-btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328912&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-        <div class="collection-card">
-          <img src="images/collections/col-6.jpg" alt="Collection 6">
-          <h3>Stand Out Shark Comic</h3>
-          <a class="view-btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328945&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-        <div class="collection-card">
-          <img src="images/collections/col-7.jpg" alt="Collection 7">
-          <h3>Cosmic Elements Collection</h3>
-          <a class="view-btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328996&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-        <div class="collection-card">
-          <img src="images/collections/col-8.jpg" alt="Collection 8">
-          <h3>Megalodon Wisdom Series</h3>
-          <a class="view-btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4329022&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-        <div class="collection-card">
-          <img src="images/collections/col-9.jpg" alt="Collection 9">
-          <h3>Emotion Geometry Collection</h3>
-          <a class="view-btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4331871&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-        <div class="collection-card">
-          <img src="images/collections/col-10.jpg" alt="Collection 10">
-          <h3>Elemental Forms Collection</h3>
-          <a class="view-btn" href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4332076&sortOrder=top%20selling" target="_blank">View Collection</a>
-        </div>
-      </div>
+<main class="container">
+  <h1 style="margin-top:20px;">Megu Donni Collections</h1>
+  <p>Explore our Redbubble collections — each is filled with unique Megu Donni designs.</p>
+
+  <div class="collection-grid">
+    <div class="collection-card">
+      <img src="images/collections/col-1.jpg" alt="Collection 1">
+      <h3>Underwater Yoga</h3>
+      <a href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=Aydemir71-&collections=4328903&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
     </div>
-  </section>
+    <div class="collection-card">
+      <img src="images/collections/col-2.jpg" alt="Collection 2">
+      <h3>Follow Your Dreams</h3>
+      <a href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328906&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+    </div>
+    <div class="collection-card">
+      <img src="images/collections/col-3.jpg" alt="Collection 3">
+      <h3>Eat Cake Like a Shark</h3>
+      <a href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328909&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+    </div>
+    <div class="collection-card">
+      <img src="images/collections/col-4.jpg" alt="Collection 4">
+      <h3>Awkward Entrance</h3>
+      <a href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328911&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+    </div>
+    <div class="collection-card">
+      <img src="images/collections/col-5.jpg" alt="Collection 5">
+      <h3>Mom App Not Found</h3>
+      <a href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328912&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+    </div>
+    <div class="collection-card">
+      <img src="images/collections/col-6.jpg" alt="Collection 6">
+      <h3>Stand Out Shark</h3>
+      <a href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328945&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+    </div>
+    <div class="collection-card">
+      <img src="images/collections/col-7.jpg" alt="Collection 7">
+      <h3>Collection 7</h3>
+      <a href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4328996&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+    </div>
+    <div class="collection-card">
+      <img src="images/collections/col-8.jpg" alt="Collection 8">
+      <h3>Collection 8</h3>
+      <a href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4329022&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+    </div>
+    <div class="collection-card">
+      <img src="images/collections/col-9.jpg" alt="Collection 9">
+      <h3>Collection 9</h3>
+      <a href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4331871&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+    </div>
+    <div class="collection-card">
+      <img src="images/collections/col-10.jpg" alt="Collection 10">
+      <h3>Collection 10</h3>
+      <a href="https://www.redbubble.com/people/aydemir71-/shop?artistUserName=aydemir71-&collections=4332076&iaCode=all-departments&sortOrder=top%20selling" target="_blank">View Collection</a>
+    </div>
+  </div>
 </main>
 
 <footer class="footer">
   <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
     <div>© <span id="y"></span> Megu Donni</div>
-    <div><a href="index.html#gallery">Gallery</a> · <a href="index.html#episodes">Episodes</a> · <a href="store.html">Store</a> · <a href="index.html#subscribe">Subscribe</a></div>
+    <div><a href="/">Home</a> · <a href="/store.html">Store</a> · <a href="/#contact">Contact</a></div>
   </div>
 </footer>
-
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 
 </body>
