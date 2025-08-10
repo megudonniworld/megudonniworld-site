@@ -232,10 +232,12 @@
       return card;
     }
 
-    BLOG_CONFIG.posts.forEach(p => postsEl.appendChild(createCard(p)));
+    // Show only the newest 6 posts; keep the rest in the array as archive
+    BLOG_CONFIG.posts.slice(0, 6).forEach(p => postsEl.appendChild(createCard(p)));
   </script>
 </body>
 </html>
+
 
 
 
