@@ -153,6 +153,90 @@
     </div>
   </section>
 
+  <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Blog Widget</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; }
+    .wrap { max-width: 1100px; margin: 40px auto; padding: 0 16px; }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .header h2 { margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .card { background: white; border-radius: 8px; padding: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .eyebrow { font-size: 12px; color: #777; text-transform: uppercase; }
+    .title { margin: 8px 0; font-size: 18px; }
+    .excerpt { font-size: 14px; color: #555; }
+    .meta { font-size: 12px; color: #999; margin-top: 8px; }
+    .btn { display: inline-block; margin-top: 12px; padding: 6px 10px; background: #0073e6; color: white; text-decoration: none; border-radius: 4px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap" id="mini-blog">
+    <div class="header">
+      <h2>Mini Blog</h2>
+      <a href="#" id="see-all">See all</a>
+    </div>
+    <div class="grid" id="posts"></div>
+  </div>
+
+  <script>
+    const BLOG_CONFIG = {
+      seeAllUrl: '#',
+      posts: [
+        {
+          title: 'Başlık 1',
+          date: '2025-08-09',
+          tag: 'Güncelleme',
+          excerpt: 'Kısa açıklama 1...',
+          url: '#',
+          ctaLabel: 'Devamını oku'
+        },
+        {
+          title: 'Başlık 2',
+          date: '2025-08-05',
+          tag: 'Bilgi',
+          excerpt: 'Kısa açıklama 2...',
+          url: '#',
+          ctaLabel: 'Devamını oku'
+        }
+      ]
+    };
+
+    const postsEl = document.getElementById('posts');
+    const seeAll = document.getElementById('see-all');
+
+    if (!BLOG_CONFIG.seeAllUrl || BLOG_CONFIG.seeAllUrl === '#') {
+      seeAll.style.display = 'none';
+    } else {
+      seeAll.href = BLOG_CONFIG.seeAllUrl;
+    }
+
+    function formatDate(iso) {
+      try { return new Date(iso).toLocaleDateString('tr-TR', { year:'numeric', month:'short', day:'2-digit' }); }
+      catch { return iso; }
+    }
+
+    function createCard(p) {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="eyebrow">${p.tag || 'Güncelleme'}</div>
+        <h3 class="title">${p.title}</h3>
+        <p class="excerpt">${p.excerpt}</p>
+        <div class="meta">${formatDate(p.date)}</div>
+        <a class="btn" href="${p.url}" target="_blank">${p.ctaLabel || 'Devamını oku'}</a>
+      `;
+      return card;
+    }
+
+    BLOG_CONFIG.posts.forEach(p => postsEl.appendChild(createCard(p)));
+  </script>
+</body>
+</html>
+
   <!-- SUBSCRIBE (AJAX gönderim + dummy form) -->
   <section id="subscribe" class="section">
     <div class="container">
