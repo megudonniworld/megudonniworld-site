@@ -358,6 +358,7 @@ html{scroll-behavior:smooth}
 .social-icons a.tiktok{ color:#000000; }      /* siyah (TikTok çok renkli ikon FA içinde yok, siyah tercih) */
 .social-icons a.instagram{ color:#E4405F; }   /* pembe/kırmızı */
 .social-icons a.twitter{ color:#000000; }     /* X siyah */
+.social-icons a.pinterest{ color:#E60023; } /* Pinterest kırmızısı */
 .social-icons a:hover{ transform:scale(1.15); opacity:.85; }
 
 /* Mobilde menü daralınca ikonları küçült */
